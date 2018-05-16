@@ -1,0 +1,74 @@
+<form [formGroup]="todoForm" (ngSubmit)="onSaveTodo()">
+  <div class="form-row align-items-center">
+
+    <div class="col-md-6 my-1">
+
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" id="name"
+               class="form-control" formControlName="name">
+      </div>
+
+    </div>
+  </div>
+  <div class="form-row align-items-center">
+
+    <div class="col-auto my-1">
+
+
+      <div class="custom-control custom-checkbox mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="customControlAutosizing" formControlName="realised">
+        <label class="custom-control-label" for="customControlAutosizing">Réalisée ?</label>
+      </div>
+
+
+    </div>
+
+    <div class="col-auto my-1">
+
+      <button class="btn btn-indigo" [disabled]="todoForm.invalid"
+              type="submit">Ajouter
+      </button>
+    </div>
+  </div>
+
+</form>
+<hr class="mb-5">
+
+
+<div class="list-group">
+
+  <div *ngFor="let todo of project.todo; let i = index" class="list-group-item  rounded mt-1"
+       [ngClass]="{'list-group-item-success': todo.realised, 'list-group-item-warning': !todo.realised}">
+
+    <div *ngIf="todo.realised">
+      <del class="mr-5 text-muted">{{ todo.name}}</del>
+
+
+      <span class="pull-right">
+            <button (click)="modRealised(i)" class="btn btn-sm btn-warning "><i
+              class="fa fa-exclamation-triangle"></i></button>
+
+    <button (click)="onRemove(i)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+
+</span>
+    </div>
+
+    <div *ngIf="!todo.realised">
+      <span class="mr-5">{{ todo.name}}</span>
+
+      <span class="pull-right">
+      <button (click)="modRealised(i)" class="btn btn-sm btn-success"><i
+        class="fa fa-check"></i></button>
+
+    <button (click)="onRemove(i)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+
+</span>
+
+    </div>
+
+
+  </div>
+
+
+</div>

@@ -1,0 +1,21 @@
+<form [formGroup]="noteForm" (ngSubmit)="onSaveNote()">
+
+  <div class="col-md-6 mt-2 mb-4">
+
+    <div class="form-group">
+      <label for="name">Titre</label>
+      <input type="text" id="name"
+             class="form-control" formControlName="title">
+    </div>
+
+  </div>
+
+  <div class="col-md-12">
+  <textarea [froalaEditor] formControlName="content"></textarea>
+
+  </div>
+  <div class="col-md-12">
+  <button class="btn btn-indigo mt-5 " type="submit" [disabled]="noteForm.invalid">Ajouter</button>
+  <a routerLink="/project/note">  <button class="btn btn-outline-indigo mt-5 " >Retour</button></a>
+  </div>
+</form>

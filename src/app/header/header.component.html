@@ -1,0 +1,15 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg fixed-top navbar-dark indigo">
+  <links>
+    <a class="navbar-brand" href="#">Web Note App</a>
+    <ul class="navbar-nav ml-auto mt-lg-0">
+
+      <li class="nav-item text-white" *ngIf="isAuth"><span class="nav-link mr-3"><i class="fa fa-user mr-2"></i>{{ username }}</span>
+      </li>
+      <li class="nav-item active" *ngIf="isAuth">
+        <a class="nav-link " (click)="onSignOut()"
+           style="cursor:pointer"
+        >Déconnexion</a>
+      </li>
+    </ul>
+  </links>
+</mdb-navbar>

@@ -1,0 +1,28 @@
+
+
+
+<div *ngIf="UserAllProjects.length > 0 " class="card mt-5 p-3">
+
+
+  <div class="list-group">
+
+
+    <a  (click)="onViewProject(project.id)" class="list-group-item list-group-item-action flex-column align-items-start"
+       *ngFor="let project of UserAllProjects; let i = index">
+
+
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ project.name }} <small class="text-primary ml-3">{{ project.id | date:'dd/MM/yyyy' }}</small> </h5>
+<span>
+
+  <a target="_blank" *ngIf="project.link != ''" href="{{ project.link }}"><button class="btn btn-indigo btn-sm my-0" >Lien</button></a>
+        <button class="btn btn-danger btn-sm my-0" (click)="onDeleteProject(project)" ><i class="fa fa-trash"></i></button></span>
+      </div>
+
+    </a>
+
+  </div>
+
+
+</div>
+

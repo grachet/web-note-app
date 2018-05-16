@@ -1,0 +1,61 @@
+
+
+
+<div style="height: 90vh">
+  <div class="flex-center flex-column">
+
+    <section class="form-simple ">
+
+      <!--Form with header-->
+      <div class="card">
+
+        <!--Header-->
+        <div class="header pt-3 indigo  ">
+
+          <div class="row d-flex align-content-center">
+            <h3 class="text-white  mt-3 mb-4 pb-1 mx-5"> Connexion  </h3>
+          </div>
+
+
+
+        </div>
+
+
+        <div class="card-body mx-4 mt-4">
+
+          <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="email">Adresse mail</label>
+              <input type="text"
+                     id="email"
+                     class="form-control"
+                     formControlName="email">
+            </div>
+            <div class="form-group">
+              <label for="password">Mot de passe</label>
+              <input type="password"
+                     id="password"
+                     class="form-control"
+                     formControlName="password">
+            </div>
+            <button class="btn btn-indigo"
+                    type="submit"
+                    [disabled]="signinForm.invalid">Valider</button>
+            <a routerLink="/auth/signup"><button class="btn btn-outline-indigo my-4">Creer un compte <small>(rapide)</small></button></a>
+          </form>
+          <p class="text-danger mt-4">{{ errorMessage }}</p>
+
+
+        </div>
+
+      </div>
+
+
+
+    </section>
+
+
+  </div>
+
+
+</div>

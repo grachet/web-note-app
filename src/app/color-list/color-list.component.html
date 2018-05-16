@@ -1,0 +1,43 @@
+<div class="row">
+
+  <div class="col-md-2 my-4">
+    <div class="card">
+      <div class="card-header lighten-1 white-text" [ngStyle]="{'background-color': hex }">
+        <br><br><br>
+      </div>
+
+
+      <div class="form-group text-center pt-1 px-1 m-0">
+        <input [(ngModel)]="hex" type="text" id="color"
+               class="form-control">
+      </div>
+
+      <div (click)="onSaveColor()" class="my-1 card-body btn btn-sm btn-indigo
+      ">
+        Ajouter
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngFor="let color of project.color; let i = index" class="col-md-2 my-4">
+    <div class="card">
+      <div class="card-header lighten-1 white-text" [ngStyle]="{'background-color': color }">
+        <br><br><br>
+      </div>
+
+      <div (click)="copyColor(color)" class="mt-1 mb-0 card-body btn-sm btn btn-indigo
+      ">
+     copy
+        {{ color }}
+      </div>
+      <div (click)="onRemove(i)" class="my-1 card-body btn btn-sm btn-indigo
+      ">
+        Supprimer
+      </div>
+
+    </div>
+  </div>
+
+</div>
+

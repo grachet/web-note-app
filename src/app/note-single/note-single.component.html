@@ -1,0 +1,13 @@
+
+<div class="card py-3 px-3">
+  <h4 class="text-primary">{{ note.date | date:'dd/MM/yyyy' }}</h4>
+
+  <div class="card indigo lighten-2 mt-2 mb-5 text-center z-depth-2">
+    <div class="card-body">
+      <p class="white-text mb-0">{{ note.title }}</p>
+    </div>
+  </div>
+<div class="form-control p-4" [froalaView]="note.content"></div>
+
+</div>
+<button (click)="onBack()" class="btn btn-outline-indigo mt-4">Retour</button>

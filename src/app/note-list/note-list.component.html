@@ -1,0 +1,28 @@
+
+<button routerLink="/project/note/new" class="btn btn-indigo">Ajouter</button>
+
+
+<div *ngIf="isNote()" class="card mt-3 p-3">
+
+
+  <div class="list-group">
+
+
+    <a  (click)="onViewProject(i)" class="list-group-item list-group-item-action flex-column align-items-start"
+        *ngFor="let note of project.note; let i = index">
+
+
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mr-5">{{ note.title }}  <small class="text-primary ml-3">{{ note.date | date:'dd/MM/yyyy' }}</small> </h5>
+        <span>
+
+        <button class="btn btn-danger btn-sm my-0" (click)="onRemove(i)" ><i class="fa fa-trash"></i></button></span>
+      </div>
+
+    </a>
+
+  </div>
+
+
+</div>
+
