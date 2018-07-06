@@ -1,15 +1,15 @@
 
-Web Note Application
+Web Note App
 ========================
 
-Application web Angular 5 qui gère des pallettes de couleurs, notes et listes d'objectifs par projet et par utilisateur
+Angular5 web application that manages color palettes, notes and lists of objectives by project and by user
 
 
-commandes :
+getting started (easy ^^) :
 
 
 ```
  npm i
-
  npm serve --open 
+ 
 ```
